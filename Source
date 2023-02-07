@@ -48,6 +48,10 @@ Functions["Connect"] = function(Table, Index)
  table.insert(Table, Index)
 end
 
+Functions["Disconnect"] = function(Table)
+ for Index, Value in pairs(Table) do Value:Disconnect() end 
+end
+
 Functions["ParseColor"] = function(str)
 	if (str):find("%d+%s*,%s*%d+%s*,%s*%d+") then
 		local s, e = (str):find("%d+%s*,%s*%d+%s*,%s*%d+");
