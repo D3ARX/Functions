@@ -10,7 +10,7 @@ Functions["Services"] = setmetatable({}, {
 
 Functions["WaitToLoad"] = function()
  local Timeout = tick()
- Client["CharacterAppearanceLoaded"]:Wait(); Client["Character"]:WaitForChild("Humanoid"); Client["Character"]:WaitForChild("Head")
+ Client["Character"]:WaitForChild("Humanoid"); Client["Character"]:WaitForChild("Head")
  repeat task.wait() until Client["Character"]["PrimaryPart"] or tick() - Timeout > 5
 end
 
