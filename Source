@@ -8,6 +8,12 @@ Functions["Services"] = setmetatable({}, {
 	end,
 })
 
+Functions["WaitToLoad"] = function()
+ local Timeout = tick()
+ Client["CharacterAppearanceLoaded"]:Wait(); Client["Character"]:WaitForChild("Humanoid"); Client["Character"]:WaitForChild("Head")
+ repeat task.wait() until Client["Character"]["PrimaryPart"] or tick() - Timeout > 5
+end
+
 Functions["Notify"] = function(Text, Length)
     Functions["Services"]["StarterGui"]:SetCore("SendNotification", {
         ["Title"] = "Notificaiton";
