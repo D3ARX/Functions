@@ -8,6 +8,13 @@ Functions["Services"] = setmetatable({}, {
 	end,
 })
 
+Functions["Notify"] = function(Text, Length)
+    Functions["Services"]["StarterGui"]:SetCore("SendNotification", {
+        ["Title"] = "Notificaiton";
+        ["Text"] = Text; ["Duration"] = Length;
+    });
+end
+
 Functions["Create"] = function(Class, Properties)
 	local Obj, Properties = Instance.new(Class), Properties or {}
 	for I, V in pairs(Properties) do if rawequal(I, "Parent") then continue end Obj[I] = V; end
